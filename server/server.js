@@ -26,7 +26,7 @@ webpack(config, (err, stats) => {
   if (stats.hasWarnings()) {
     console.warn(info.warnings);
   } 
-  
+
   startServer()
 })
 
@@ -35,8 +35,7 @@ function startServer(){
 
     app.listen(port,(err) => {
         if(!err)
-            console.log(`brie listening on port: ${port}`,
-            path.resolve(__dirname, '../dist'))
+            console.log(`brie listening on port: ${port}`)
         else 
             console.error(err)
     })
