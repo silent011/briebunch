@@ -1,5 +1,4 @@
 const path = require('path')
-const webpack = require('webpack')
 const HtmlPlugin = require('html-webpack-plugin')
 
 module.exports = {
@@ -21,13 +20,6 @@ module.exports = {
             title: 'Brie Bunch',
             template: './client/index.html',
             favicon:'./client/media/favi.ico'
-        }),
-        new webpack.HotModuleReplacementPlugin()
-    ],
-    devServer:{
-        contentBase: path.join(__dirname, '../../dist'),
-        port:3000,
-        hot:true,
-        open: true
-    }
+        })
+    ]
 }
