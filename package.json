@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "node index.js",
+    "dev": "webpack-dev-server --config server/webpack_configs/webpack_dev.config.js"
   },
   "repository": {
     "type": "git",
@@ -30,5 +31,10 @@
     "react-dom": "16.8.6",
     "style-loader": "0.23.1",
     "webpack": "4.33.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1",
+    "webpack-cli": "^3.3.3",
+    "webpack-dev-server": "^3.7.1"
   }
 }
