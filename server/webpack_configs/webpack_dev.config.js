@@ -19,7 +19,8 @@ module.exports = {
     plugins: [
         new HtmlPlugin({
             title: 'Brie Bunch',
-            template: './client/index.html'
+            template: './client/index.html',
+            favicon:'./client/media/favi.ico'
         }),
         new webpack.HotModuleReplacementPlugin()
     ],
