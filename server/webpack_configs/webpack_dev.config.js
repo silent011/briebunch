@@ -10,7 +10,12 @@ module.exports = {
     },
     module: {
         rules:[
-            {test:/\.jpg$/, use:'file-loader'},
+            {test:/\.(png|jpg)$/, use: {
+                loader:'file-loader',
+                options: {
+                    outputPath:'imgs',
+                    name:'[name].[ext]'}
+            }},
             {test:/\.css$/, use: ['css-loader']},
             {test:/\.js$/, exclude:/node_modules/,loader:'babel-loader'},
             {test:/\.styl$/, use:['style-loader','css-loader','stylus-loader']}
