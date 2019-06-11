@@ -1,4 +1,5 @@
 const path = require('path')
+const webpack = require('webpack')
 const HtmlPlugin = require('html-webpack-plugin')
 
 module.exports = {
@@ -11,17 +12,20 @@ module.exports = {
         rules:[
             {test:/\.jpg$/, use:'file-loader'},
             {test:/\.css$/, use: ['css-loader']},
-            {test:/\.js$/, exclude:/node_modules/,loader:'babel-loader'}
+            {test:/\.js$/, exclude:/node_modules/,loader:'babel-loader'},
+            {test:/\.styl$/, use:['style-loader','css-loader','stylus-loader']}
         ]
     },
     plugins: [
         new HtmlPlugin({
             title: 'Brie Bunch',
             template: './client/index.html'
-        })
+        }),
+        new webpack.HotModuleReplacementPlugin()
     ],
     devServer:{
         contentBase: path.join(__dirname, '../../dist'),
-        port:3000
+        port:3000,
+        hot:true
     }
 }

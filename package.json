@@ -30,6 +30,8 @@
     "react": "16.8.6",
     "react-dom": "16.8.6",
     "style-loader": "0.23.1",
+    "stylus": "0.54.5",
+    "stylus-loader": "3.0.2",
     "webpack": "4.33.0"
   },
   "devDependencies": {

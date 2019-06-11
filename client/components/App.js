@@ -1,10 +1,12 @@
 import React, { Component } from 'react'
 
+import '../styles/index.styl'
+
 export default class App extends Component {
   render() {
     return (
       <div>
-        Hello cheeses 22222
+        Hello cheeses
       </div>
     )
   }
