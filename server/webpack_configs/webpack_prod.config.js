@@ -33,5 +33,6 @@ module.exports = {
             template: './client/index.html',
             favicon:'./client/media/favi.ico'
         })
-    ]
+    ],
+    mode: 'production'
 }

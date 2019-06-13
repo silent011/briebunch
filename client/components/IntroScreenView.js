@@ -13,7 +13,7 @@ class IntroScreenView extends Component {
 
     handlePlay() {
       let audio = this.audioRef.current
-      audio.volume = 0.3
+      audio.volume = 0.2
       audio.play()
       audio.onended = () => console.log('track ended')
   }

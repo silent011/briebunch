@@ -1,0 +1,51 @@
+@keyframes wave {
+    0% {
+       transform: scale(1) ;
+    }
+    100% {
+        transform: scale(1.6);
+        opacity: 1;
+    }
+  
+}
+
+@keyframes rotate {
+    100% {
+        transform: rotate(359deg);
+    }
+}
+
+#introButton {
+    // border:2px solid red;
+    position:fixed;
+    left:50%;
+    top:50%;
+    width:7vw;
+    height:7vw;
+    transform: translate(-50%, -50%);
+    cursor: pointer;
+    img {
+        display: block;
+        position:relative;
+        background: #6658e2;
+        width:100%;
+        height:100%;
+        border-radius: 50%;
+        // animation: rotate 2s ease-out infinite;  
+    }
+
+    .wave {
+        position:absolute;
+        top:-2px;
+        left:-2px;
+        width:7vw;
+        height:7vw;
+        border-radius:50%;
+        border:2px solid white;
+        animation: wave 1.2s linear infinite;
+    }
+
+    .wave:last-of-type{
+        animation: wave 1.2s 0.4s linear infinite;     
+    }
+}
