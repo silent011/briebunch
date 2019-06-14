@@ -1,6 +1,7 @@
 import React, {Component} from 'react'
 import IntroButton from './IntroButton'
 import Slider from './Slider'
+import ToBeContinued from './ToBeContinued'
 
 import {actions} from '../redux/actions/sliderActions'
 
@@ -19,19 +20,26 @@ class IntroScreenView extends Component {
       audio.onplay = () => {
           this.props.dispatch(actions.introMusicStarted())
       }
+      
       audio.play()
+      audio.onended = () => {
+        this.props.dispatch(actions.introEnded())
+      }
   }
 
  
   render() {
-      let isPlaying = this.props.slider.isPlaying
+      let {isPlaying, introEnded} = this.props.slider
       if(isPlaying) {
           this.handlePlay()
       }
     return (
         <div>
-          {isPlaying ? null : <IntroButton />}
+          {(!isPlaying && !introEnded) ? <IntroButton /> : null}
+          {(!isPlaying && introEnded) ? <ToBeContinued /> : null}
+          
            <Slider /> 
+            
           <audio ref={this.audioRef} id="sliderAudio">
                 <source src="/sounds/flute.mp3" type="audio/mpeg"/>
             </audio>

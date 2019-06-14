@@ -6,12 +6,12 @@ import '../styles/_introButton.styl'
 import '../media/imgs/cheese.png'
 
 let IntroButton = ({dispatch}) => {
-  let handlePlay = () => {
+  let handlePlayIntro = () => {
     dispatch(actions.startIntro())
   }
 
   return (
-    <div id="introButton" onClick = {handlePlay}>
+    <div id="introButton" onClick = {handlePlayIntro}>
         <img src="/imgs/cheese.png" alt="brie" />
         <div className="wave"></div>
         <div className="wave"></div>
