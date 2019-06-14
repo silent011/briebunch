@@ -2,9 +2,13 @@
     0% {
        transform: scale(1) ;
     }
-    100% {
+    80% {
         transform: scale(1.6);
-        opacity: 1;
+        opacity:1;
+    }
+    100% {
+          transform: scale(1.6);
+          opacity:0;
     }
   
 }
@@ -42,10 +46,10 @@
         height:7vw;
         border-radius:50%;
         border:2px solid white;
-        animation: wave 1.2s linear infinite;
+        animation: wave 2s linear infinite;
     }
 
     .wave:last-of-type{
-        animation: wave 1.2s 0.4s linear infinite;     
+        animation: wave 2s 0.4s linear infinite;     
     }
 }
