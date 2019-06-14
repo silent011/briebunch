@@ -26,7 +26,7 @@ class Slider extends Component {
 
   render() {
     let srcString = '/imgs/'
-    if(this.props.isPlaying) this.handlePlay()
+    if(this.props.introMusicPlaying) this.handlePlay()
     return (
         <div ref={this.sliderRef} className="slider">
           {peeps.map((peep, index) => {
@@ -38,7 +38,7 @@ class Slider extends Component {
 }
 
 const mapStateToProps = state => ({
-  isPlaying: state.slider.isPlaying
+  introMusicPlaying:state.slider.introMusicPlaying
 })
 
 Slider = connect(mapStateToProps)(Slider)

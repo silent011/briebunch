@@ -2,6 +2,8 @@ import React, {Component} from 'react'
 import IntroButton from './IntroButton'
 import Slider from './Slider'
 
+import {actions} from '../redux/actions/sliderActions'
+
 import '../media/sounds/flute.mp3'
 
 class IntroScreenView extends Component {
@@ -14,8 +16,10 @@ class IntroScreenView extends Component {
     handlePlay() {
       let audio = this.audioRef.current
       audio.volume = 0.2
+      audio.onplay = () => {
+          this.props.dispatch(actions.introMusicStarted())
+      }
       audio.play()
-      audio.onended = () => console.log('track ended')
   }
 
  
