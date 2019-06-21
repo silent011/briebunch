@@ -43,10 +43,10 @@ export default class CircleSvg extends Component {
           <circle className="orbs-clones"  cx="-48" cy="240" r="32" fill="url(#image3)"/>
           <circle className="orbs-clones"  cx="-48" cy="240" r="32" fill="url(#image4)" />
         </g>
-        <circle className="orbs"  cx="-48" cy="240" r="32" fill="url(#image1)" />
-          <circle className="orbs" cx="-48" cy="240" r="32" fill="url(#image2)" />
-          <circle className="orbs"  cx="-48" cy="240" r="32" fill="url(#image3)"/>
-          <circle className="orbs"  cx="-48" cy="240" r="32" fill="url(#image4)" />
+        <circle className="orbs"  cx="-144" cy="190" r="32" fill="url(#image1)" />
+          <circle className="orbs" cx="-144" cy="190" r="32" fill="url(#image2)" />
+          <circle className="orbs"  cx="-144" cy="190" r="32" fill="url(#image3)"/>
+          <circle className="orbs"  cx="-144" cy="190" r="32" fill="url(#image4)" />
    
     </svg>
     </div>

@@ -1,4 +1,5 @@
 import anime from 'animejs'
+import headerTextAnimation from './headerTextAnimation'
 
 let orbsAnimation = (orbs, orbClones) => {
     let delay = 1250
@@ -13,13 +14,17 @@ let orbsAnimation = (orbs, orbClones) => {
     let animateOrb = (orb, orbClone, orbNumber, newLocation) => {
         let orbsRotation = (orbNumber) => {
             if(orbNumber === 0) {
-                anime({
+                let rotation = anime({
                     targets:'#orbs-group',
                     easing:'linear',
                     duration:5000,
                     loop:true,
                     rotate:360,
-                    transformOrigin:['50% 50% 0', '50% 50% 0']
+                    transformOrigin:['50% 50% 0', '50% 50% 0'],
+                    loopComplete: () => {
+                        headerTextAnimation()
+                        rotation.loopComplete = () => {}
+                    }
                 })
             }          
         }
@@ -28,12 +33,12 @@ let orbsAnimation = (orbs, orbClones) => {
         let orbTravel = anime({
             targets: orb,
             delay: orbNumber*delay,
-            translateX: {value:748},
-            translateY: {value:-206},
+            translateX: {value:844},
+            translateY: {value:-156},
             duration:3000,
-            scale: {value:[3,1], duration:1400},
+            scale: {value:[3,1], duration:2400},
             easing: 'linear',
-            transformOrigin:['50% 50% 0', '50% 50% 0']
+            // transformOrigin:['50% 50% 0', '50% 50% 0']
         }).finished.then(() => {
             let {cx, cy} = newLocation
             orb.setAttribute("style", "")
@@ -79,7 +84,7 @@ let animateCircle = (stats) => {
         duration:5000,
         easing:'linear',
         update: (stats) => {
-            if(Math.round(stats.progress) === 77){
+            if(Math.round(stats.progress) === 27){
                 orbsAnimation(orbs, orbClones)
                 circleRotation.update = () => {}
             }

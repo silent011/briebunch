@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Marck+Script&display=swap');
+
 .mainHeader {
     position: relative;    
     height:30vw;
@@ -8,26 +10,36 @@
         display: flex;  
         justify-content: center;
         align-items: center;
-        font-size: 10vw;
         font-family: 'Permanent Marker', cursive;
     }
 
     .textHolder {
-        transform: rotate(-10deg);  
+        opacity:0;
     }
 
     .leftHeader {
-        border:2px solid red;
+        // border:2px solid red;
         left:0;
         color: #B83DBA;
+        font-size: 15vw;
         text-shadow: 0 0 20px #B83DBA;
+
+        .textHolder {
+            transform: rotate(-14deg) translateY(-5vw);
+        }
     }
 
     .rightHeader {
-        border:2px solid blue;  
+        // border:2px solid blue;  
         right:0;
         top:0;
-        color: #FFAEC8;
+        color: white;
         text-shadow: 0 0 20px #FFAEC8;
+        font-size: 13vw;
+        font-family: 'Marck Script', cursive;
+
+        .textHolder {
+            transform:rotate(-14deg) translateY(3vw);
+        }
     }
 }
