@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import IntroScreen from './IntroScreen'
-import CircleSvg from './CircleSvg'
-
+import MainScreen from './MainScreen';
 
 import '../styles/index.styl'
+
 
 export default class App extends Component {
 
@@ -11,7 +11,7 @@ export default class App extends Component {
     return (
       <div>
         {/* <IntroScreen /> */}
-        <CircleSvg />
+         <MainScreen />
       </div>
     )
   }

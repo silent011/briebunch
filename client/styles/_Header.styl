@@ -1,0 +1,33 @@
+.mainHeader {
+    position: relative;    
+    height:30vw;
+    .leftHeader, .rightHeader {
+        position:absolute;
+        width:40%;
+        height:inherit;
+        display: flex;  
+        justify-content: center;
+        align-items: center;
+        font-size: 10vw;
+        font-family: 'Permanent Marker', cursive;
+    }
+
+    .textHolder {
+        transform: rotate(-10deg);  
+    }
+
+    .leftHeader {
+        border:2px solid red;
+        left:0;
+        color: #B83DBA;
+        text-shadow: 0 0 20px #B83DBA;
+    }
+
+    .rightHeader {
+        border:2px solid blue;  
+        right:0;
+        top:0;
+        color: #FFAEC8;
+        text-shadow: 0 0 20px #FFAEC8;
+    }
+}
