@@ -1,16 +1,24 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux'
 
 import '../styles/_CircleSvg.styl'
 
 import animate from '../scripts/orbsAnimation'
 
-export default class CircleSvg extends Component {
+class CircleSvgView extends Component {
+  constructor(props){
+    super(props)
+  }
+
   componentDidMount(){
-    let stats = {}
-    animate(stats)  
+   
   }
 
   render() {
+    if(this.props.musicStarted){
+      let stats = {}
+      animate(stats)  
+    }
     return (
       <div className="circle-container">
          <svg viewBox="0 0 1400 400">
@@ -53,3 +61,11 @@ export default class CircleSvg extends Component {
     )
   }
 }
+
+let mapStateToProps = state => ({
+  musicStarted: state.mainScreen.musicStarted
+})
+
+let CircleSvg = connect(mapStateToProps)(CircleSvgView)
+
+export default CircleSvg

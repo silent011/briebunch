@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "dev": "webpack-dev-server --config server/webpack_configs/webpack_dev.config.js"
+    "dev": "webpack-dev-server --config server/webpack_configs/webpack_dev.config.js",
+    "server-dev": "nodemon index.js"
   },
   "repository": {
     "type": "git",

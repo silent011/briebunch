@@ -1,11 +1,8 @@
 import React, {Component} from 'react'
 import IntroButton from './IntroButton'
 import Slider from './Slider'
-import ToBeContinued from './ToBeContinued'
 
 import {actions} from '../redux/actions/sliderActions'
-
-import '../media/sounds/flute.mp3'
 
 class IntroScreenView extends Component {
     constructor(props){
@@ -36,12 +33,9 @@ class IntroScreenView extends Component {
     return (
         <div>
           {(!isPlaying && !introEnded) ? <IntroButton /> : null}
-          {(!isPlaying && introEnded) ? <ToBeContinued /> : null}
-          
            <Slider /> 
-            
-          <audio ref={this.audioRef} id="sliderAudio">
-                <source src="/sounds/flute.mp3" type="audio/mpeg"/>
+          <audio preload="none" ref={this.audioRef} id="sliderAudio">
+                <source src="/music/flute" type="audio/mpeg"/>
             </audio>
         </div>
       )
