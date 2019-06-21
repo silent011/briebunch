@@ -1,21 +1,22 @@
 import anime from 'animejs'
 
 let animateText = () => {
-    let easing = 'easeOutExpo'
-    anime({
-        targets:'.leftHeader .textHolder',
-        opacity:1,
-        duration:5000,
+    let easing = 'linear'
+    let duration = 3000
+
+    anime.timeline({
+        duration,
         easing
     })
+    .add({
+        targets:'.leftHeader .textHolder',
+        opacity:1,
 
-    anime({
+    })
+    .add({
         targets:'.rightHeader .textHolder',
         opacity:1,
-        duration:5000,
-        easing,
-        delay:500
-    })
+    }, 1000)
 }
 
 export default animateText

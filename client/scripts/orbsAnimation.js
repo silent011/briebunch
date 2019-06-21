@@ -21,10 +21,6 @@ let orbsAnimation = (orbs, orbClones) => {
                     loop:true,
                     rotate:360,
                     transformOrigin:['50% 50% 0', '50% 50% 0'],
-                    loopComplete: () => {
-                        headerTextAnimation()
-                        rotation.loopComplete = () => {}
-                    }
                 })
             }          
         }
@@ -46,7 +42,7 @@ let orbsAnimation = (orbs, orbClones) => {
             orbClone.setAttribute("cy", cy)
             
             orbsRotation(orbNumber)
-         
+            
             anime({
                 targets:orbClone,
                 loop:true,
@@ -56,6 +52,7 @@ let orbsAnimation = (orbs, orbClones) => {
                 transformOrigin:[`${cx}px ${cy}px 0`, `${cx}px ${cy}px 0`]
             })
             
+            if(orbNumber === 2) headerTextAnimation()
         
         })
     } 
@@ -73,7 +70,7 @@ let animateCircle = (stats) => {
     anime({
         targets:circle,
         opacity:[0,1],
-        duration:3000,
+        duration:5000,
         easing:'linear',
     })
 
